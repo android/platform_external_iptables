@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <arpa/inet.h>
 #include <ip6tables.h>
 #include <linux/netfilter_ipv6/ip6_tables.h>
 
@@ -410,7 +411,7 @@ static struct ip6tables_match tcp = {
 };
 
 void
-_init(void)
+ip6t_tcp_init(void)
 {
 	register_match6(&tcp);
 }

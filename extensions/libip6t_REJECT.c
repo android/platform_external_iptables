@@ -164,7 +164,7 @@ struct ip6tables_target reject = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_REJECT_init(void)
 {
 	register_target6(&reject);
 }

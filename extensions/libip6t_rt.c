@@ -356,7 +356,7 @@ static struct ip6tables_match rt = {
 };
 
 void
-_init(void)
+ip6t_rt_init(void)
 {
 	register_match6(&rt);
 }

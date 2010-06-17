@@ -160,7 +160,7 @@ struct ip6tables_target HL = { NULL,
 	.extra_opts	= opts 
 };
 
-void _init(void)
+void ip6t_HL_init(void)
 {
 	register_target6(&HL);
 }

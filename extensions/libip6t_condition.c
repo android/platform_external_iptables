@@ -100,7 +100,7 @@ static struct ip6tables_match condition = {
 
 
 void
-_init(void)
+ip6t_condition_init(void)
 {
 	register_match6(&condition);
 }

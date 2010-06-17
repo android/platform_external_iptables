@@ -128,7 +128,7 @@ static struct ip6tables_target mss = {
 	.extra_opts	= opts
 };
 
-void _init(void)
+void ip6t_TCPMSS_init(void)
 {
 	register_target6(&mss);
 }

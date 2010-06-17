@@ -136,7 +136,7 @@ static struct ip6tables_match mark = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_2mark_init(void)
 {
 	register_match6(&mark);
 }

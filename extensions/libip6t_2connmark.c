@@ -145,7 +145,7 @@ static struct ip6tables_match connmark_match = {
     .extra_opts    = opts
 };
 
-void _init(void)
+void ip6t_2connmark_init(void)
 {
 	register_match6(&connmark_match);
 }

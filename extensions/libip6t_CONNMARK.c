@@ -214,7 +214,7 @@ static struct ip6tables_target connmark_target = {
     .extra_opts    = opts
 };
 
-void _init(void)
+void ip6t_CONNMARK_init(void)
 {
 	register_target6(&connmark_target);
 }

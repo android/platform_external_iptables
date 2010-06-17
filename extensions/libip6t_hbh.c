@@ -256,7 +256,7 @@ static struct ip6tables_match optstruct = {
 };
 
 void
-_init(void)
+ip6t_hbh_init(void)
 {
 	register_match6(&optstruct);
 }

@@ -263,7 +263,7 @@ struct ip6tables_match optstruct = {
 };
 
 void
-_init(void)
+ip6t_dst_init(void)
 {
 	register_match6(&optstruct);
 }

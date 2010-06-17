@@ -143,7 +143,7 @@ struct ip6tables_match hl = {
 };
 
 
-void _init(void) 
+void ip6t_2hl_init(void)
 {
 	register_match6(&hl);
 }

@@ -70,7 +70,7 @@ static struct ip6tables_match eui64 = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_eui64_init(void)
 {
 	register_match6(&eui64);
 }

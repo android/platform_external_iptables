@@ -133,7 +133,7 @@ static struct ip6tables_match mac = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_mac_init(void)
 {
 	register_match6(&mac);
 }

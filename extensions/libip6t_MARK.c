@@ -125,7 +125,7 @@ struct ip6tables_target mark = {
 	.extra_opts    = opts
 };
 
-void _init(void)
+void ip6t_MARK_init(void)
 {
 	register_target6(&mark);
 }
