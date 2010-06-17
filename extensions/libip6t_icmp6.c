@@ -272,7 +272,7 @@ static struct ip6tables_match icmpv6 = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_icmp6_init(void)
 {
 	register_match6(&icmpv6);
 }

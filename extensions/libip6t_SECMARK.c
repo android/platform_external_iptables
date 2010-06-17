@@ -119,7 +119,7 @@ static struct ip6tables_target secmark = {
 	.extra_opts	= opts
 };
 
-void _init(void)
+void ip6t_SECMARK_init(void)
 {
 	register_target6(&secmark);
 }

@@ -179,7 +179,7 @@ struct ip6tables_match esp = {
 };
 
 void
-_init(void)
+ip6t_esp_init(void)
 {
 	register_match6(&esp);
 }

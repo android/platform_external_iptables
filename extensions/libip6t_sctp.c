@@ -543,7 +543,7 @@ struct ip6tables_match sctp
     .extra_opts    = opts
 };
 
-void _init(void)
+void ip6t_sctp_init(void)
 {
 	register_match6(&sctp);
 }

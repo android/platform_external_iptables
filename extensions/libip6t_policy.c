@@ -472,7 +472,7 @@ struct ip6tables_match policy = {
 	.extra_opts	= opts
 };
 
-void _init(void)
+void ip6t_policy_init(void)
 {
 	register_match6(&policy);
 }

@@ -363,7 +363,7 @@ static struct ip6tables_match hashlimit = { NULL,
 	.extra_opts	= opts
 };
 
-void _init(void)
+void ip6t_hashlimit_init(void)
 {
 	register_match6(&hashlimit);
 }

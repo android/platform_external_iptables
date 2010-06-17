@@ -146,7 +146,7 @@ struct ip6tables_match length = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_length_init(void)
 {
 	register_match6(&length);
 }

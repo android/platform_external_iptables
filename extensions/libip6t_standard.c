@@ -60,7 +60,7 @@ static struct ip6tables_target standard = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_standard_init(void)
 {
 	register_target6(&standard);
 }

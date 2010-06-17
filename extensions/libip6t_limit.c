@@ -189,7 +189,7 @@ static struct ip6tables_match limit = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_limit_init(void)
 {
 	register_match6(&limit);
 }

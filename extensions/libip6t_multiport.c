@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <arpa/inet.h>
 #include <ip6tables.h>
 /* To ensure that iptables compiles with an old kernel */
 #include "../include/linux/netfilter_ipv6/ip6t_multiport.h"
@@ -451,7 +452,7 @@ static struct ip6tables_match multiport_v1 = {
 };
 
 void
-_init(void)
+ip6t_multiport_init(void)
 {
 	register_match6(&multiport);
 	register_match6(&multiport_v1);

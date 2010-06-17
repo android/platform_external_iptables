@@ -186,7 +186,7 @@ static struct ip6tables_match physdev = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_physdev_init(void)
 {
 	register_match6(&physdev);
 }

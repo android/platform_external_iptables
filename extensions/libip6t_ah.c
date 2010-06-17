@@ -221,7 +221,7 @@ struct ip6tables_match ah = {
 };
 
 void
-_init(void)
+ip6t_ah_init(void)
 {
 	register_match6(&ah);
 }

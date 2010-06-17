@@ -284,7 +284,7 @@ struct ip6tables_target log
     .extra_opts    = opts
 };
 
-void _init(void)
+void ip6t_LOG_init(void)
 {
 	register_target6(&log);
 }

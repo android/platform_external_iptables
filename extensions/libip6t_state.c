@@ -157,7 +157,7 @@ static struct ip6tables_match state = {
 	.extra_opts	= opts
 };
 
-void _init(void)
+void ip6t_state_init(void)
 {
 	register_match6(&state);
 }

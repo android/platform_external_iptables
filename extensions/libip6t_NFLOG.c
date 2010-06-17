@@ -155,7 +155,7 @@ static struct ip6tables_target nflog = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_NFLOG_init(void)
 {
 	register_target6(&nflog);
 }

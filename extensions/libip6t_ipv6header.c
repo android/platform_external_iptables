@@ -310,7 +310,7 @@ struct ip6tables_match ipv6header = {
 	.extra_opts	= opts,
 };
 
-void _init(void)
+void ip6t_ipv6header_init(void)
 {
 	register_match6(&ipv6header);
 }

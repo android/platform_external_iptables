@@ -108,7 +108,7 @@ static struct ip6tables_target nfqueue = {
 	.extra_opts	= opts
 };
 
-void _init(void)
+void ip6t_NFQUEUE_init(void)
 {
 	register_target6(&nfqueue);
 }

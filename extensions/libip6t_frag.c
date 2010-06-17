@@ -266,7 +266,7 @@ struct ip6tables_match frag = {
 };
 
 void
-_init(void)
+ip6t_frag_init(void)
 {
 	register_match6(&frag);
 }
