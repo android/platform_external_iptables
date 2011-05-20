@@ -1,0 +1,8 @@
+Change-Id: I11285f59574f52dfc507507433f7d93e925e32c2
+Code-Review+2: Jean-Baptiste Queru <jbq@google.com>
+Verified+1: Jean-Baptiste Queru <jbq@google.com>
+Submitted-by: Jean-Baptiste Queru <jbq@google.com>
+Submitted-at: Wed, 18 Mar 2009 17:59:26 -0700
+Reviewed-on: https://review.source.android.com/9272
+Project: platform/external/iptables
+Branch: refs/heads/master
