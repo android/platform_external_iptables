@@ -6,7 +6,6 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES:= \
-	$(KERNEL_HEADERS) \
 	$(LOCAL_PATH)/../include/
 
 # Accommodate arm-eabi-4.4.3 tools that don't set __ANDROID__
@@ -28,7 +27,6 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES:= \
-	$(KERNEL_HEADERS) \
 	$(LOCAL_PATH)/../include/
 
 # Accommodate arm-eabi-4.4.3 tools that don't set __ANDROID__
