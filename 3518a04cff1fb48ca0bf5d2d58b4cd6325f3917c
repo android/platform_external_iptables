@@ -1,0 +1,7 @@
+Code-Review+2: jp abgrall <jpa@google.com>
+Verified+1: Deckard Autoverifier <deckard@android.com>
+Submitted-by: jp abgrall <jpa@google.com>
+Submitted-at: Mon, 12 Aug 2013 21:37:43 +0000
+Reviewed-on: https://android-review.googlesource.com/46883
+Project: platform/external/iptables
+Branch: refs/heads/master
