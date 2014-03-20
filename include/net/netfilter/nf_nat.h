@@ -42,6 +42,19 @@ struct nf_nat_range
 	union nf_conntrack_man_proto min, max;
 };
 
+/* for >=kernel 3.7 ip6t_MASQUERADE target */
+struct nf6_nat_range
+{
+    /* Set to OR of flags above. */
+    unsigned int flags;
+
+	/* Inclusive: network order. */
+	union nf_inet_addr min_ip, max_ip;
+
+	/* Inclusive: network order. */
+	union nf_conntrack_man_proto min, max;
+};
+
 /* For backwards compat: don't use in modern code. */
 struct nf_nat_multi_range_compat
 {
