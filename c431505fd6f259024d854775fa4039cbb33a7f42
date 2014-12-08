@@ -1,0 +1,7 @@
+Code-Review+2: Stephen Hines <srhines@google.com>
+Verified+1: Deckard Autoverifier <deckard@android.com>
+Submitted-by: Dan Albert <danalbert@google.com>
+Submitted-at: Mon, 08 Dec 2014 23:44:30 +0000
+Reviewed-on: https://android-review.googlesource.com/116460
+Project: platform/external/iptables
+Branch: refs/heads/master
