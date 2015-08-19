@@ -1,0 +1,7 @@
+Code-Review+2: Elliott Hughes <enh@google.com>
+Verified+1: Yusuke Sato <yusukes@google.com>
+Submitted-by: Yusuke Sato <yusukes@google.com>
+Submitted-at: Wed, 19 Aug 2015 03:28:17 +0000
+Reviewed-on: https://android-review.googlesource.com/167137
+Project: platform/external/iptables
+Branch: refs/heads/master
