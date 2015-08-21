@@ -1,0 +1,4 @@
+Local modifications:
+
+* Add -w (--wait) option to iptables/iptables-restore.c.
+* Add -w (--wait) option to iptables/ip6tables-restore.c.
