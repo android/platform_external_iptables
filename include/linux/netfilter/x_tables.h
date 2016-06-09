@@ -57,7 +57,7 @@ struct xt_entry_target {
 {									       \
 	.target.u.user = {						       \
 		.target_size	= XT_ALIGN(__size),			       \
-		.name		= __name,				       \
+		.name		= (__name),				       \
 	},								       \
 }
 
@@ -133,7 +133,7 @@ struct xt_counters_info {
 	for (__i = sizeof(type);				\
 	     __i < (e)->target_offset;				\
 	     __i += __m->u.match_size) {			\
-		__m = (void *)e + __i;				\
+		__m = (void *)(e) + __i;			\
 								\
 		__ret = fn(__m , ## args);			\
 		if (__ret != 0)					\
@@ -143,16 +143,17 @@ struct xt_counters_info {
 })
 
 /* fn returns 0 to continue iteration */
+/* NOLINT: clang-tidy adds wrong parentheses around 'type'. */
 #define XT_ENTRY_ITERATE_CONTINUE(type, entries, size, n, fn, args...) \
 ({								\
 	unsigned int __i, __n;					\
 	int __ret = 0;						\
-	type *__entry;						\
+	type *__entry;				/* NOLINT */    \
 								\
 	for (__i = 0, __n = 0; __i < (size);			\
 	     __i += __entry->next_offset, __n++) { 		\
 		__entry = (void *)(entries) + __i;		\
-		if (__n < n)					\
+		if (__n < (n))					\
 			continue;				\
 								\
 		__ret = fn(__entry , ## args);			\
@@ -175,7 +176,7 @@ struct xt_counters_info {
 
 /* can only be xt_entry_match, so no use of typeof here */
 #define xt_ematch_foreach(pos, entry) \
-	for ((pos) = (struct xt_entry_match *)entry->elems; \
+	for ((pos) = (struct xt_entry_match *)(entry)->elems; \
 	     (pos) < (struct xt_entry_match *)((char *)(entry) + \
 	             (entry)->target_offset); \
 	     (pos) = (struct xt_entry_match *)((char *)(pos) + \

@@ -336,8 +336,8 @@ static inline void list_splice_init(struct list_head *list,
  * @head:	the head for your list.
  */
 #define list_for_each(pos, head) \
-	for (pos = (head)->next, prefetch(pos->next); pos != (head); \
-        	pos = pos->next, prefetch(pos->next))
+	for ((pos) = (head)->next, prefetch((pos)->next); (pos) != (head); \
+        	(pos) = (pos)->next, prefetch((pos)->next))
 
 /**
  * __list_for_each	-	iterate over a list
@@ -350,7 +350,7 @@ static inline void list_splice_init(struct list_head *list,
  * or 1 entry) most of the time.
  */
 #define __list_for_each(pos, head) \
-	for (pos = (head)->next; pos != (head); pos = pos->next)
+	for ((pos) = (head)->next; (pos) != (head); (pos) = (pos)->next)
 
 /**
  * list_for_each_prev	-	iterate over a list backwards
@@ -358,8 +358,8 @@ static inline void list_splice_init(struct list_head *list,
  * @head:	the head for your list.
  */
 #define list_for_each_prev(pos, head) \
-	for (pos = (head)->prev, prefetch(pos->prev); pos != (head); \
-        	pos = pos->prev, prefetch(pos->prev))
+	for ((pos) = (head)->prev, prefetch((pos)->prev); (pos) != (head); \
+        	(pos) = (pos)->prev, prefetch((pos)->prev))
 
 /**
  * list_for_each_safe	-	iterate over a list safe against removal of list entry
@@ -368,8 +368,8 @@ static inline void list_splice_init(struct list_head *list,
  * @head:	the head for your list.
  */
 #define list_for_each_safe(pos, n, head) \
-	for (pos = (head)->next, n = pos->next; pos != (head); \
-		pos = n, n = pos->next)
+	for ((pos) = (head)->next, (n) = (pos)->next; (pos) != (head); \
+		(pos) = (n), (n) = (pos)->next)
 
 /**
  * list_for_each_entry	-	iterate over list of given type
@@ -378,11 +378,11 @@ static inline void list_splice_init(struct list_head *list,
  * @member:	the name of the list_struct within the struct.
  */
 #define list_for_each_entry(pos, head, member)				\
-	for (pos = list_entry((head)->next, typeof(*pos), member),	\
-		     prefetch(pos->member.next);			\
-	     &pos->member != (head); 					\
-	     pos = list_entry(pos->member.next, typeof(*pos), member),	\
-		     prefetch(pos->member.next))
+	for ((pos) = list_entry((head)->next, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.next);			\
+	     &(pos)->member != (head); 					\
+	     (pos) = list_entry((pos)->member.next, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.next))
 
 /**
  * list_for_each_entry_reverse - iterate backwards over list of given type.
@@ -391,11 +391,11 @@ static inline void list_splice_init(struct list_head *list,
  * @member:	the name of the list_struct within the struct.
  */
 #define list_for_each_entry_reverse(pos, head, member)			\
-	for (pos = list_entry((head)->prev, typeof(*pos), member),	\
-		     prefetch(pos->member.prev);			\
-	     &pos->member != (head); 					\
-	     pos = list_entry(pos->member.prev, typeof(*pos), member),	\
-		     prefetch(pos->member.prev))
+	for ((pos) = list_entry((head)->prev, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.prev);			\
+	     &(pos)->member != (head); 					\
+	     (pos) = list_entry((pos)->member.prev, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.prev))
 
 /**
  * list_prepare_entry - prepare a pos entry for use as a start point in
@@ -405,7 +405,7 @@ static inline void list_splice_init(struct list_head *list,
  * @member:	the name of the list_struct within the struct.
  */
 #define list_prepare_entry(pos, head, member) \
-	((pos) ? : list_entry(head, typeof(*pos), member))
+	((pos) ? : list_entry(head, typeof(*(pos)), member))
 
 /**
  * list_for_each_entry_continue -	iterate over list of given type
@@ -415,11 +415,11 @@ static inline void list_splice_init(struct list_head *list,
  * @member:	the name of the list_struct within the struct.
  */
 #define list_for_each_entry_continue(pos, head, member) 		\
-	for (pos = list_entry(pos->member.next, typeof(*pos), member),	\
-		     prefetch(pos->member.next);			\
-	     &pos->member != (head);					\
-	     pos = list_entry(pos->member.next, typeof(*pos), member),	\
-		     prefetch(pos->member.next))
+	for ((pos) = list_entry((pos)->member.next, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.next);			\
+	     &(pos)->member != (head);					\
+	     (pos) = list_entry((pos)->member.next, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.next))
 
 /**
  * list_for_each_entry_safe - iterate over list of given type safe against removal of list entry
@@ -429,10 +429,10 @@ static inline void list_splice_init(struct list_head *list,
  * @member:	the name of the list_struct within the struct.
  */
 #define list_for_each_entry_safe(pos, n, head, member)			\
-	for (pos = list_entry((head)->next, typeof(*pos), member),	\
-		n = list_entry(pos->member.next, typeof(*pos), member);	\
-	     &pos->member != (head); 					\
-	     pos = n, n = list_entry(n->member.next, typeof(*n), member))
+	for ((pos) = list_entry((head)->next, typeof(*(pos)), member),	\
+		(n) = list_entry((pos)->member.next, typeof(*(pos)), member);	\
+	     &(pos)->member != (head); 					\
+	     (pos) = (n), (n) = list_entry((n)->member.next, typeof(*(n)), member))
 
 /**
  * list_for_each_rcu	-	iterate over an rcu-protected list
@@ -444,12 +444,12 @@ static inline void list_splice_init(struct list_head *list,
  * as long as the traversal is guarded by rcu_read_lock().
  */
 #define list_for_each_rcu(pos, head) \
-	for (pos = (head)->next, prefetch(pos->next); pos != (head); \
-        	pos = pos->next, ({ smp_read_barrier_depends(); 0;}), prefetch(pos->next))
+	for ((pos) = (head)->next, prefetch((pos)->next); (pos) != (head); \
+        	(pos) = (pos)->next, ({ smp_read_barrier_depends(); 0;}), prefetch((pos)->next))
 
 #define __list_for_each_rcu(pos, head) \
-	for (pos = (head)->next; pos != (head); \
-        	pos = pos->next, ({ smp_read_barrier_depends(); 0;}))
+	for ((pos) = (head)->next; (pos) != (head); \
+        	(pos) = (pos)->next, ({ smp_read_barrier_depends(); 0;}))
 
 /**
  * list_for_each_safe_rcu	-	iterate over an rcu-protected list safe
@@ -463,8 +463,8 @@ static inline void list_splice_init(struct list_head *list,
  * as long as the traversal is guarded by rcu_read_lock().
  */
 #define list_for_each_safe_rcu(pos, n, head) \
-	for (pos = (head)->next, n = pos->next; pos != (head); \
-		pos = n, ({ smp_read_barrier_depends(); 0;}), n = pos->next)
+	for ((pos) = (head)->next, (n) = (pos)->next; (pos) != (head); \
+		(pos) = (n), ({ smp_read_barrier_depends(); 0;}), (n) = (pos)->next)
 
 /**
  * list_for_each_entry_rcu	-	iterate over rcu list of given type
@@ -477,12 +477,12 @@ static inline void list_splice_init(struct list_head *list,
  * as long as the traversal is guarded by rcu_read_lock().
  */
 #define list_for_each_entry_rcu(pos, head, member)			\
-	for (pos = list_entry((head)->next, typeof(*pos), member),	\
-		     prefetch(pos->member.next);			\
-	     &pos->member != (head); 					\
-	     pos = list_entry(pos->member.next, typeof(*pos), member),	\
+	for ((pos) = list_entry((head)->next, typeof(*(pos)), member),	\
+		     prefetch((pos)->member.next);			\
+	     &(pos)->member != (head); 					\
+	     (pos) = list_entry((pos)->member.next, typeof(*(pos)), member),	\
 		     ({ smp_read_barrier_depends(); 0;}),		\
-		     prefetch(pos->member.next))
+		     prefetch((pos)->member.next))
 
 
 /**
@@ -646,12 +646,12 @@ static inline void hlist_add_after(struct hlist_node *n,
 #define hlist_entry(ptr, type, member) container_of(ptr,type,member)
 
 #define hlist_for_each(pos, head) \
-	for (pos = (head)->first; pos && ({ prefetch(pos->next); 1; }); \
-	     pos = pos->next)
+	for ((pos) = (head)->first; (pos) && ({ prefetch((pos)->next); 1; }); \
+	     (pos) = (pos)->next)
 
 #define hlist_for_each_safe(pos, n, head) \
-	for (pos = (head)->first; pos && ({ n = pos->next; 1; }); \
-	     pos = n)
+	for ((pos) = (head)->first; (pos) && ({ (n) = (pos)->next; 1; }); \
+	     (pos) = (n))
 
 /**
  * hlist_for_each_entry	- iterate over list of given type
@@ -661,10 +661,10 @@ static inline void hlist_add_after(struct hlist_node *n,
  * @member:	the name of the hlist_node within the struct.
  */
 #define hlist_for_each_entry(tpos, pos, head, member)			 \
-	for (pos = (head)->first;					 \
-	     pos && ({ prefetch(pos->next); 1;}) &&			 \
-		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \
-	     pos = pos->next)
+	for ((pos) = (head)->first;					 \
+	     (pos) && ({ prefetch((pos)->next); 1;}) &&			 \
+		({ (tpos) = hlist_entry(pos, typeof(*(tpos)), member); 1;}); \
+	     (pos) = (pos)->next)
 
 /**
  * hlist_for_each_entry_continue - iterate over a hlist continuing after existing point
@@ -673,10 +673,10 @@ static inline void hlist_add_after(struct hlist_node *n,
  * @member:	the name of the hlist_node within the struct.
  */
 #define hlist_for_each_entry_continue(tpos, pos, member)		 \
-	for (pos = (pos)->next;						 \
-	     pos && ({ prefetch(pos->next); 1;}) &&			 \
-		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \
-	     pos = pos->next)
+	for ((pos) = (pos)->next;						 \
+	     (pos) && ({ prefetch((pos)->next); 1;}) &&			 \
+		({ (tpos) = hlist_entry(pos, typeof(*(tpos)), member); 1;}); \
+	     (pos) = (pos)->next)
 
 /**
  * hlist_for_each_entry_from - iterate over a hlist continuing from existing point
@@ -685,9 +685,9 @@ static inline void hlist_add_after(struct hlist_node *n,
  * @member:	the name of the hlist_node within the struct.
  */
 #define hlist_for_each_entry_from(tpos, pos, member)			 \
-	for (; pos && ({ prefetch(pos->next); 1;}) &&			 \
-		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \
-	     pos = pos->next)
+	for (; (pos) && ({ prefetch((pos)->next); 1;}) &&			 \
+		({ (tpos) = hlist_entry(pos, typeof(*(tpos)), member); 1;}); \
+	     (pos) = (pos)->next)
 
 /**
  * hlist_for_each_entry_safe - iterate over list of given type safe against removal of list entry
@@ -698,10 +698,10 @@ static inline void hlist_add_after(struct hlist_node *n,
  * @member:	the name of the hlist_node within the struct.
  */
 #define hlist_for_each_entry_safe(tpos, pos, n, head, member) 		 \
-	for (pos = (head)->first;					 \
-	     pos && ({ n = pos->next; 1; }) && 				 \
-		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \
-	     pos = n)
+	for ((pos) = (head)->first;					 \
+	     (pos) && ({ (n) = (pos)->next; 1; }) && 				 \
+		({ (tpos) = hlist_entry(pos, typeof(*(tpos)), member); 1;}); \
+	     (pos) = (n))
 
 /**
  * hlist_for_each_entry_rcu - iterate over rcu list of given type
@@ -715,9 +715,9 @@ static inline void hlist_add_after(struct hlist_node *n,
  * as long as the traversal is guarded by rcu_read_lock().
  */
 #define hlist_for_each_entry_rcu(tpos, pos, head, member)		 \
-	for (pos = (head)->first;					 \
-	     pos && ({ prefetch(pos->next); 1;}) &&			 \
-		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \
-	     pos = pos->next, ({ smp_read_barrier_depends(); 0; }) )
+	for ((pos) = (head)->first;					 \
+	     (pos) && ({ prefetch((pos)->next); 1;}) &&			 \
+		({ (tpos) = hlist_entry(pos, typeof(*(tpos)), member); 1;}); \
+	     (pos) = (pos)->next, ({ smp_read_barrier_depends(); 0; }) )
 
 #endif

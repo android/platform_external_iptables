@@ -28,7 +28,7 @@
 
 #define NF_QUEUE_NR(x) ((((x) << 16) & NF_VERDICT_QMASK) | NF_QUEUE)
 
-#define NF_DROP_ERR(x) (((-x) << 16) | NF_DROP)
+#define NF_DROP_ERR(x) (((-(x)) << 16) | NF_DROP)
 
 /* only for userspace compatibility */
 /* Generic cache responses from hook functions.

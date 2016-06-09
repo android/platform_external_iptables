@@ -20,7 +20,7 @@ enum {
 	XT_HMARK_METHOD_L3,
 	XT_HMARK_METHOD_L3_4,
 };
-#define XT_HMARK_FLAG(flag)	(1 << flag)
+#define XT_HMARK_FLAG(flag)	(1 << (flag))
 
 union hmark_ports {
 	struct {
