@@ -8,12 +8,15 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <sys/un.h>
+#include <sys/time.h>
 #include <unistd.h>
 #include <xtables.h>
+#include <math.h>
 #include "xshared.h"
 
 #define XT_SOCKET_NAME "xtables"
 #define XT_SOCKET_LEN 8
+#define BASE_MICROSECONDS	100000
 
 /*
  * Print out any special helps. A user might like to be able to add a --help
@@ -243,11 +246,16 @@ void xs_init_match(struct xtables_match *match)
 		match->init(match->m);
 }
 
-bool xtables_lock(int wait)
+bool xtables_lock(int wait, struct timeval *wait_interval)
 {
 	int i = 0, ret, xt_socket;
 	struct sockaddr_un xt_addr;
-	int waited = 0;
+	struct timeval time_left, wait_time, waited_time;
+
+	time_left.tv_sec = wait;
+	time_left.tv_usec = 0;
+	waited_time.tv_sec = 0;
+	waited_time.tv_usec = 0;
 
 	memset(&xt_addr, 0, sizeof(xt_addr));
 	xt_addr.sun_family = AF_UNIX;
@@ -262,12 +270,43 @@ bool xtables_lock(int wait)
 			   offsetof(struct sockaddr_un, sun_path)+XT_SOCKET_LEN);
 		if (ret == 0)
 			return true;
-		else if (wait >= 0 && waited >= wait)
+		if (++i % 10 == 0) {
+			if (wait != -1)
+				fprintf(stderr, "Another app is currently holding the xtables lock; "
+					"still %lds %ldus time ahead to have a chance to grab the lock...\n",
+					time_left.tv_sec, time_left.tv_usec);
+			else
+				fprintf(stderr, "Another app is currently holding the xtables lock; "
+						"waiting for it to exit...\n");
+		}
+
+		wait_time = *wait_interval;
+		select(0, NULL, NULL, NULL, &wait_time);
+		if (wait == -1)
+			continue;
+
+		timeradd(&waited_time, wait_interval, &waited_time);
+		timersub(&time_left, wait_interval, &time_left);
+		if (!timerisset(&time_left))
 			return false;
-		if (++i % 2 == 0)
-			fprintf(stderr, "Another app is currently holding the xtables lock; "
-				"waiting (%ds) for it to exit...\n", waited);
-		waited++;
-		sleep(1);
 	}
+}
+
+void parse_wait_interval(const char *str, struct timeval *wait_interval)
+{
+	unsigned int usec;
+	int ret;
+
+	ret = sscanf(str, "%u", &usec);
+	if (ret == 1) {
+		if (usec > 999999)
+			xtables_error(PARAMETER_PROBLEM,
+				      "too long usec wait %u > 999999 usec",
+				      usec);
+
+		wait_interval->tv_sec = 0;
+		wait_interval->tv_usec = usec;
+		return;
+	}
+	xtables_error(PARAMETER_PROBLEM, "wait interval not numeric");
 }
