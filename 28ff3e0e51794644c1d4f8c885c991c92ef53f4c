@@ -45,6 +45,30 @@
       "revId": "28ff3e0e51794644c1d4f8c885c991c92ef53f4c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b61eebb_cb16155d",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2016-09-14T20:30:44Z",
+      "side": 1,
+      "message": "I\u0027m not overly concerned with this at this point -- it\u0027s about the same amount of work when we convert it to Soong, and this entire section becomes a oneline change in Soong.",
+      "parentUuid": "2b61eebb_8b741dc4",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 114
+      },
+      "revId": "28ff3e0e51794644c1d4f8c885c991c92ef53f4c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
