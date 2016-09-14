@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b61eebb_4b6a05e6",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-09-14T20:28:39Z",
+      "side": 1,
+      "message": "we should remove this rather than duplicate it below. it\u0027s not 2011 any more :-)",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 27
+      },
+      "revId": "28ff3e0e51794644c1d4f8c885c991c92ef53f4c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b61eebb_8b741dc4",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-09-14T20:28:39Z",
+      "side": 1,
+      "message": "factor all the copy \u0026 paste out into iptables_c_includes and so on, and then for the two modules, everything should be a one-liner.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 114
+      },
+      "revId": "28ff3e0e51794644c1d4f8c885c991c92ef53f4c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
