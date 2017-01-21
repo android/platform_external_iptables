@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c836a60f_81d29a09",
+        "filename": "iptables/xshared.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2017-01-21T05:23:03Z",
+      "side": 1,
+      "message": "It might be nice to close(xt_socket) here. However, that\u0027s not strictly necessary since when this happens all current callers exit with an error. Up to you.",
+      "range": {
+        "startLine": 264,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 23
+      },
+      "revId": "1239b759bf99b4b687915dcfb1ddb102698b3414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c836a60f_41c89259",
+        "filename": "iptables/xshared.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2017-01-21T05:23:03Z",
+      "side": 1,
+      "message": "Nit: either remove \"is\" or remove \"indicates\".",
+      "range": {
+        "startLine": 91,
+        "startChar": 26,
+        "endLine": 91,
+        "endChar": 28
+      },
+      "revId": "1239b759bf99b4b687915dcfb1ddb102698b3414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c836a60f_21cd8e69",
+        "filename": "iptables/xshared.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2017-01-21T05:23:03Z",
+      "side": 1,
+      "message": "s/has been/was/",
+      "range": {
+        "startLine": 96,
+        "startChar": 27,
+        "endLine": 96,
+        "endChar": 35
+      },
+      "revId": "1239b759bf99b4b687915dcfb1ddb102698b3414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
