@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c87306cf_62556cbc",
+        "filename": "iptables/xshared.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-01-23T13:25:02Z",
+      "side": 1,
+      "message": "I\u0027ll leave this as is for now, given that not closing the lock was the previous behaviour.",
+      "parentUuid": "c836a60f_81d29a09",
+      "range": {
+        "startLine": 264,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 23
+      },
+      "revId": "1239b759bf99b4b687915dcfb1ddb102698b3414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c836a60f_41c89259",
         "filename": "iptables/xshared.h",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "88902e0b_05f116e7",
+        "filename": "iptables/xshared.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-01-23T13:25:02Z",
+      "side": 1,
+      "message": "Heh, i copy pasted this from your suggested comment :) should\u0027ve trusted you less. Done.",
+      "parentUuid": "c836a60f_41c89259",
+      "range": {
+        "startLine": 91,
+        "startChar": 26,
+        "endLine": 91,
+        "endChar": 28
+      },
+      "revId": "1239b759bf99b4b687915dcfb1ddb102698b3414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c836a60f_21cd8e69",
         "filename": "iptables/xshared.h",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2017-01-21T05:23:03Z",
       "side": 1,
       "message": "s/has been/was/",
+      "range": {
+        "startLine": 96,
+        "startChar": 27,
+        "endLine": 96,
+        "endChar": 35
+      },
+      "revId": "1239b759bf99b4b687915dcfb1ddb102698b3414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a88b32df_036fd0a2",
+        "filename": "iptables/xshared.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-01-23T13:25:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c836a60f_21cd8e69",
       "range": {
         "startLine": 96,
         "startChar": 27,
