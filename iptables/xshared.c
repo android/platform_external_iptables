@@ -284,12 +284,36 @@ bool xtables_lock(int wait, struct timeval *wait_interval)
 	}
 }
 
-void parse_wait_interval(const char *str, struct timeval *wait_interval)
+int parse_wait_time(int argc, char *argv[])
 {
+	int wait = -1;
+
+	if (optarg) {
+		if (sscanf(optarg, "%i", &wait) != 1)
+			xtables_error(PARAMETER_PROBLEM,
+				"wait seconds not numeric");
+	} else if (xs_has_arg(argc, argv, optind))
+		if (sscanf(argv[optind], "%i", &wait) != 1)
+			xtables_error(PARAMETER_PROBLEM,
+				"wait seconds not numeric");
+
+	return wait;
+}
+
+void parse_wait_interval(int argc, char *argv[], struct timeval *wait_interval)
+{
+	const char *arg;
 	unsigned int usec;
 	int ret;
 
-	ret = sscanf(str, "%u", &usec);
+	if (optarg)
+		arg = optarg;
+	else if (xs_has_arg(argc, argv, optind))
+		arg = argv[optind++];
+	else
+		return;
+
+	ret = sscanf(arg, "%u", &usec);
 	if (ret == 1) {
 		if (usec > 999999)
 			xtables_error(PARAMETER_PROBLEM,
@@ -301,4 +325,11 @@ void parse_wait_interval(const char *str, struct timeval *wait_interval)
 		return;
 	}
 	xtables_error(PARAMETER_PROBLEM, "wait interval not numeric");
+}
+
+bool xs_has_arg(int argc, char *argv[], const int optidx)
+{
+	return optind < argc &&
+	       argv[optidx][0] != '-' &&
+	       argv[optidx][0] != '!';
 }
