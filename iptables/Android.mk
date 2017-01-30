@@ -6,7 +6,8 @@ commonFlags:= \
 	-Wno-pointer-arith \
 	-Wno-unused-parameter \
 	-Wno-parentheses-equality \
-	-Werror
+	-Werror \
+	-DXT_LOCK_NAME='"/system/etc/xtables.lock"'
 
 #----------------------------------------------------------------
 # The iptables lock file
