@@ -34,6 +34,24 @@
       "revId": "f595a26bff4c5f3597491f0c4d16c5ef56002d23",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "303a43d7_f4f9df8e",
+        "filename": "iptables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2017-03-10T09:40:10Z",
+      "side": 1,
+      "message": "I moved the lock to be the first target but didn\u0027t derive it. (See other CL.) The result looks clearer to me. Thoughts?",
+      "parentUuid": "51f35085_92cff8eb",
+      "revId": "f595a26bff4c5f3597491f0c4d16c5ef56002d23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
