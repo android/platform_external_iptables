@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "70a5b068_4df340c4",
+        "filename": "iptables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1121773
+      },
+      "writtenOn": "2017-03-10T04:56:31Z",
+      "side": 1,
+      "message": "is it possible to move LOCAL_MODULE, LOCAL_MODULE_CLASS and LOCAL_MODULE_PATH above commonFlags so XT_LOCK_NAME can be derived instead of hard coded?",
+      "revId": "f595a26bff4c5f3597491f0c4d16c5ef56002d23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
