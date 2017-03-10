@@ -9,8 +9,18 @@ commonFlags:= \
 	-Werror
 
 #----------------------------------------------------------------
-# iptables
+# The iptables lock file
+include $(CLEAR_VARS)
 
+LOCAL_MODULE := xtables.lock
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/etc
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+
+include $(BUILD_PREBUILT)
+
+#----------------------------------------------------------------
+# iptables
 
 include $(CLEAR_VARS)
 
@@ -83,6 +93,5 @@ LOCAL_POST_INSTALL_CMD := $(hide) mkdir -p $(TARGET_OUT)/bin; \
 LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../NOTICE
 
 include $(BUILD_EXECUTABLE)
-
 
 #----------------------------------------------------------------

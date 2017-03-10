@@ -16,7 +16,9 @@
 #include <math.h>
 #include "xshared.h"
 
+#ifndef XT_LOCK_NAME
 #define XT_LOCK_NAME	"/run/xtables.lock"
+#endif
 #define BASE_MICROSECONDS	100000
 
 /*
