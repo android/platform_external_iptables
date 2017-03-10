@@ -16,6 +16,24 @@
       "revId": "f595a26bff4c5f3597491f0c4d16c5ef56002d23",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51f35085_92cff8eb",
+        "filename": "iptables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2017-03-10T09:08:39Z",
+      "side": 1,
+      "message": "Not very elegantly. We can\u0027t use the LOCAL_MODULE_xyz variables directly because they\u0027re cleared by \"include $(CLEAR_VARS)\", which we usually put at the beginning of each target. So the best I could come up with is to make the lock the first target after the common flags and do:\n\n\u003d\u003d\u003d\u003d\u003d\u003d\n    iptablesLockPath :\u003d /$(TARGET_COPY_OUT_SYSTEM)/etc\n    iptablesLockName :\u003d xtables.lock\n\n    commonFlags:\u003d \\\n\t-Wno-missing-field-initializers \\\n\t-Wno-sign-compare \\\n\t-Wno-pointer-arith \\\n\t-Wno-unused-parameter \\\n\t-Wno-parentheses-equality \\\n\t-Werror \\\n\t-D XT_LOCK_NAME\u003d\\\"$(iptablesLockPath)/$(iptablesLockName)\\\"\n\n    include $(CLEAR_VARS)\n\n    LOCAL_MODULE :\u003d $(iptablesLockName)\n    LOCAL_MODULE_CLASS :\u003d ETC\n    LOCAL_MODULE_PATH :\u003d $(TARGET_OUT)/etc\n    LOCAL_SRC_FILES :\u003d $(iptablesLockName)\n\n    include $(BUILD_PREBUILT)\n\u003d\u003d\u003d\u003d\u003d\n\nwhich doesn\u0027t really seem like an improvement. Also, TARGET_COPY_OUT_SYSTEM is very rarely used.",
+      "parentUuid": "70a5b068_4df340c4",
+      "revId": "f595a26bff4c5f3597491f0c4d16c5ef56002d23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
