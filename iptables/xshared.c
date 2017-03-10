@@ -249,7 +249,7 @@ void xs_init_match(struct xtables_match *match)
 		match->init(match->m);
 }
 
-bool xtables_lock(int wait, struct timeval *wait_interval)
+int xtables_lock(int wait, struct timeval *wait_interval)
 {
 	struct timeval time_left, wait_time, waited_time;
 	int fd, i = 0;
@@ -261,11 +261,11 @@ bool xtables_lock(int wait, struct timeval *wait_interval)
 
 	fd = open(XT_LOCK_NAME, O_CREAT, 0600);
 	if (fd < 0)
-		return true;
+		return XT_LOCK_UNSUPPORTED;
 
 	while (1) {
 		if (flock(fd, LOCK_EX | LOCK_NB) == 0)
-			return true;
+			return fd;
 		if (++i % 10 == 0) {
 			if (wait != -1)
 				fprintf(stderr, "Another app is currently holding the xtables lock; "
@@ -284,8 +284,16 @@ bool xtables_lock(int wait, struct timeval *wait_interval)
 		timeradd(&waited_time, wait_interval, &waited_time);
 		timersub(&time_left, wait_interval, &time_left);
 		if (!timerisset(&time_left))
-			return false;
+			return XT_LOCK_BUSY;
 	}
+}
+
+void xtables_unlock(int lock) {
+	if (lock < 0) {
+		return;
+	}
+
+	close(lock);
 }
 
 int parse_wait_time(int argc, char *argv[])
