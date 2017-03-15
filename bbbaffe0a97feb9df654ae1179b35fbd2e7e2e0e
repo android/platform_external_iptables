@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f171430b_ac71873b",
+        "filename": "iptables/ip6tables-restore.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1121773
+      },
+      "writtenOn": "2017-03-15T08:09:42Z",
+      "side": 1,
+      "message": "I don\u0027t believe it is a correctness problem, however it would be nice to set lock \u003d XT_LOCK_NOT_ACQUIRED after xtables_unlock() returns to prevent confusion if some later change alters the locking pattern.",
+      "revId": "bbbaffe0a97feb9df654ae1179b35fbd2e7e2e0e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73b998ab_bdee53db",
+        "filename": "iptables/iptables-restore.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1121773
+      },
+      "writtenOn": "2017-03-15T08:09:42Z",
+      "side": 1,
+      "message": "same as ip6tables-restore.c, consider lock \u003d XT_LOCK_NOT_ACQUIRED",
+      "revId": "bbbaffe0a97feb9df654ae1179b35fbd2e7e2e0e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
