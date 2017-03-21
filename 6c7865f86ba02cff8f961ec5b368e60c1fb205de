@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b90de312_bacb52f7",
+        "filename": "iptables/xshared.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1121773
+      },
+      "writtenOn": "2017-03-21T08:23:19Z",
+      "side": 1,
+      "message": "I like the way extracting the wait \u003d\u003d -1 case simplifies the loop!",
+      "revId": "6c7865f86ba02cff8f961ec5b368e60c1fb205de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
