@@ -5,7 +5,10 @@
 
 #include <limits.h>
 
+<<<<<<< HEAD   (61cd1d Revert "Add '-w' option to ip[6]tables-restore")
 #if defined(__ANDROID__) || (defined(__GLIBC__) && __GLIBC__ == 2)
+=======
+>>>>>>> BRANCH (b013e3 iptables 1.6.1 release)
 #include <netinet/ip.h>
 #include <netinet/in.h>
 #include <netinet/ip_icmp.h>
@@ -13,15 +16,4 @@
 #include <netinet/udp.h>
 #include <net/if.h>
 #include <sys/types.h>
-#else /* libc5 */
-#include <sys/socket.h>
-#include <linux/ip.h>
-#include <linux/in.h>
-#include <linux/if.h>
-#include <linux/icmp.h>
-#include <linux/tcp.h>
-#include <linux/udp.h>
-#include <linux/types.h>
-#include <linux/in6.h>
-#endif
 #endif
