@@ -71,6 +71,10 @@ AC_ARG_WITH([xt-lock-name], AS_HELP_STRING([--with-xt-lock-name=PATH],
 	[Path to the xtables lock [[/run/xtables.lock]]]),
 	[xt_lock_name="$withval"],
 	[xt_lock_name="/run/xtables.lock"])
+AC_ARG_ENABLE([strict-locking],
+	AS_HELP_STRING([--enable-strict-locking],
+	[Refuse to operate unless xtables lock was acquired]),
+	[enable_strict_locking="$enableval"], [enable_strict_locking="no"])
 
 libiptc_LDFLAGS2="";
 AX_CHECK_LINKER_FLAGS([-Wl,--no-as-needed],
@@ -239,6 +243,11 @@ AC_SUBST([libxtables_vmajor])
 AC_DEFINE_UNQUOTED([XT_LOCK_NAME], "${xt_lock_name}",
 	[Location of the iptables lock file])
 
+if test "x$enable_strict_locking" = "xyes" ; then
+	AC_DEFINE([ENABLE_STRICT_LOCKING], [1],
+		[Define to 1 to refuse to operate unless xtables lock is acquired])
+fi
+
 AC_CONFIG_FILES([Makefile extensions/GNUmakefile include/Makefile
 	iptables/Makefile iptables/xtables.pc
 	iptables/iptables.8 iptables/iptables-extensions.8.tmpl
@@ -273,7 +282,8 @@ Build parameters:
   Installation prefix (--prefix):	${prefix}
   Xtables extension directory:		${e_xtlibdir}
   Pkg-config directory:			${e_pkgconfigdir}
-  Xtables lock file:			${xt_lock_name}"
+  Xtables lock file:			${xt_lock_name}
+  Enable strict locking:		${enable_strict_locking}"
 
 if [[ -n "$ksourcedir" ]]; then
 	echo "  Kernel source directory:		${ksourcedir}"
