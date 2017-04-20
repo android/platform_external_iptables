@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c47d70f_2629234a",
+        "filename": "iptables/xshared.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1121773
+      },
+      "writtenOn": "2017-04-20T08:44:52Z",
+      "side": 1,
+      "message": "It looks like xtables_free_opts() is being called to get sensible output from leak checkers even in the event of an error that will immediately call exit(). As discussed offline it looks harmless to call xtables_free_opts() in ip(6)tables_restore where it was not previously called.",
+      "revId": "cd07a690fadfb73c69244e63428a6635123e02b1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
