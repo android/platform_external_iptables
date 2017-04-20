@@ -93,7 +93,7 @@ extern void xs_init_match(struct xtables_match *);
  * A value >= 0 indicates the lock filedescriptor. Other values are:
  *
  * XT_LOCK_UNSUPPORTED : The system does not support locking, execution will
- * proceed lockless.
+ * proceed lockless unless compiled with --enable-strict-locking.
  *
  * XT_LOCK_BUSY : The lock was held by another process. xtables_lock only
  * returns this value when |wait| == false. If |wait| == true, xtables_lock
@@ -106,8 +106,8 @@ enum {
 	XT_LOCK_UNSUPPORTED  = -2,
 	XT_LOCK_NOT_ACQUIRED  = -3,
 };
-extern int xtables_lock(int wait, struct timeval *tv);
 extern void xtables_unlock(int lock);
+extern int xtables_lock_or_exit(int wait, struct timeval *tv);
 
 int parse_wait_time(int argc, char *argv[]);
 void parse_wait_interval(int argc, char *argv[], struct timeval *wait_interval);
