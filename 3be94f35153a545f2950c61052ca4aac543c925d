@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "431472dc_89b4ab60",
+        "filename": "iptables/xshared.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1121773
+      },
+      "writtenOn": "2017-05-18T03:33:17Z",
+      "side": 1,
+      "message": "Is it worth adding a comment or fprintf() here to educate sysadmins who will inevitably encounter logging problems?\n\nxtables_lock() will say \"Can\u0027t open ...\" however it won\u0027t say why this is important.",
+      "revId": "3be94f35153a545f2950c61052ca4aac543c925d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
