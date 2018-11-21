@@ -2,6 +2,115 @@
   "comments": [
     {
       "key": {
+        "uuid": "fbb0be0e_cff48f22",
+        "filename": "extensions/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "Think you could add a comment explaining how this works? It looks like we take most of the libxt_*.c (with a few exceptions), then run filter_init on the them in order to... what? Then we take all those and put them in an initext.c file which... calls all the init functions? Then we compile initext.c along with the transformed(?) libxt_*.c, and we do this twice, once for IPv4 and once for IPv6?",
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b321703_9efcc487",
+        "filename": "extensions/gen_init",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "Sorry to ask you this, but since this is fresh in your mind... think you could provide more details here to explain how these two scripts work together? Maybe provide an example?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 13
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "234cd490_1b79c1c9",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "I assume you checked these can\u0027t be removed?",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a35805fa_69293da6",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "Just to make sure: does /system/etc/xtables.lock have the same permissions before and after this change? If iptables locking doesn\u0027t work, the failure modes are subtle and hard to test for.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 1
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d47fef9_cce098c9",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "What does this do? Does it #undef ENABLE_IPV6? And do we have it because the top-level defaults add -DENABLE_IPV6? If so might want to add a comment to explain this.",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 30
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d769aa0d_e722a6b5",
         "filename": "iptables/NOTICE",
         "patchSetId": 1
@@ -42,6 +151,52 @@
         "startChar": 0,
         "endLine": 1,
         "endChar": 9
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "002f9d19_93c875f9",
+        "filename": "libiptc/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "I assume you\u0027ve checked that we can\u0027t remove this?",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 33
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdb43a89_0892d13f",
+        "filename": "libxtables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 1,
+      "message": "Per other comment, we may not need this.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 6
       },
       "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",

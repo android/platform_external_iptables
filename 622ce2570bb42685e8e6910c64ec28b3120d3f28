@@ -140,6 +140,52 @@
       "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9238f3d9_152c9bd0",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 0,
+      "message": "Looks like we lost it. I don\u0027t know what it\u0027s for though. Perhaps we don\u0027t need it?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 35
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83578c7b_1295cef1",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T16:15:16Z",
+      "side": 0,
+      "message": "Is this actually used by anything? Unlike the static version above, I don\u0027t see anything depending on it. If not, maybe just not port it over to soong?\n\nThere doesn\u0027t seem to be a libxtables.so on device so I assume we use the statically linked version.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 31
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
