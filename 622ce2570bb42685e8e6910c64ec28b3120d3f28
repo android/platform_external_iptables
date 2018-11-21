@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d192a20_12cb4f9c",
+        "filename": "iptables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T01:06:04Z",
+      "side": 0,
+      "message": "Looks like we lost this. Do we still need it, or does it cause no warnings?",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 32
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bb1f738_1350a991",
+        "filename": "iptables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T01:06:04Z",
+      "side": 0,
+      "message": "This one too",
+      "range": {
+        "startLine": 8,
+        "startChar": 1,
+        "endLine": 8,
+        "endChar": 26
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffccf190_af861153",
+        "filename": "iptables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-11-21T01:06:04Z",
+      "side": 0,
+      "message": "Do we no longer need this?",
+      "range": {
+        "startLine": 36,
+        "startChar": 14,
+        "endLine": 36,
+        "endChar": 27
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
