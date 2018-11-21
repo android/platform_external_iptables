@@ -22,6 +22,30 @@
       "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f10686e4_0e2b8157",
+        "filename": "iptables/NOTICE",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-21T07:20:57Z",
+      "side": 1,
+      "message": "We used to set:\n\n LOCAL_NOTICE_FILE :\u003d ../NOTICE\n\nSoong doesn\u0027t like \"..\" paths, so a symlink is easiest. There are some pending changes to enable using a filegroup to reference notice files outside of your subtree, but those aren\u0027t in yet.",
+      "parentUuid": "d769aa0d_e722a6b5",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 9
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
