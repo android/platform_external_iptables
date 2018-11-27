@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dd245677_a3039693",
+        "filename": "extensions/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2018-11-27T00:35:11Z",
+      "side": 1,
+      "message": "is this simply a real bug? fix the bug?",
+      "range": {
+        "startLine": 13,
+        "startChar": 11,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fbb0be0e_cff48f22",
         "filename": "extensions/Android.bp",
         "patchSetId": 1
