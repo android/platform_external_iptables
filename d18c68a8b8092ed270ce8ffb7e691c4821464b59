@@ -202,6 +202,30 @@
     },
     {
       "key": {
+        "uuid": "9c5dfebe_36600149",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T20:47:42Z",
+      "side": 1,
+      "message": "I\u0027m converting the makefiles, generally trying not to touch the code. Feel free to clean up the code (and remove the flag from the build file).",
+      "parentUuid": "282a2220_c718cc43",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a35805fa_69293da6",
         "filename": "iptables/Android.bp",
         "patchSetId": 1
