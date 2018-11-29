@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "bed0f098_e61a59b0",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 0,
+      "message": "This was never used, the linker isn\u0027t invoked for static libraries, so LOCAL_LDFLAGS is unused.",
+      "parentUuid": "9238f3d9_152c9bd0",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 35
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83578c7b_1295cef1",
         "filename": "libxtables/Android.mk",
         "patchSetId": 1
@@ -186,6 +210,30 @@
       "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76ff3045_bda4feb0",
+        "filename": "libxtables/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "83578c7b_1295cef1",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 31
+      },
+      "revId": "622ce2570bb42685e8e6910c64ec28b3120d3f28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }

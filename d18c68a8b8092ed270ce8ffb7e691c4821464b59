@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "682270df_a10e285c",
+        "filename": "extensions/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "This came from the Android.mk file, it\u0027s not new.",
+      "parentUuid": "dd245677_a3039693",
+      "range": {
+        "startLine": 13,
+        "startChar": 11,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fbb0be0e_cff48f22",
         "filename": "extensions/Android.bp",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4439dd04_65af1bf6",
+        "filename": "extensions/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbb0be0e_cff48f22",
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "1d75b7bf_c46a7c0f",
+        "filename": "extensions/gen_init",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b321703_9efcc487",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 13
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "234cd490_1b79c1c9",
         "filename": "iptables/Android.bp",
         "patchSetId": 1
@@ -85,6 +151,30 @@
       "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a55d60cc_674d2383",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "Yep.\n\n  external/iptables/iptables/iptables-xml.c:688:25: error: equality comparison with extraneous parentheses [-Werror,-Wparentheses-equality]\n                } else if ((buffer[0] \u003d\u003d \u0027*\u0027)) {\n                            ~~~~~~~~~~^~~~~~",
+      "parentUuid": "234cd490_1b79c1c9",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "a9257e6b_43896cdb",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "File permissions are largely controlled by fs_config, not by the build system directly.\n\nhttps://cs.corp.google.com/android/system/core/libcutils/fs_config.cpp?rcl\u003d251c264c9ca2ef13f1d67ccb667063c8c604b0fc\u0026l\u003d133\n\nAccording to the treehugger output, it\u0027s the same before and after:\n\n  system/etc/xtables.lock 0 0 644 selabel\u003du:object_r:system_file:s0 capabilities\u003d0x0",
+      "parentUuid": "a35805fa_69293da6",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 1
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d47fef9_cce098c9",
         "filename": "iptables/Android.bp",
         "patchSetId": 1
@@ -131,6 +245,30 @@
       "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2d5cf44_1083cedf",
+        "filename": "iptables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "Yep. Done.",
+      "parentUuid": "7d47fef9_cce098c9",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 30
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -204,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "89e0b6ee_903d5dd4",
+        "filename": "libiptc/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "Yep:\n\n external/iptables/libiptc/libiptc.c:1361:10: error: passing \u0027unsigned int *\u0027 to parameter of type \u0027socklen_t *\u0027 (aka \u0027int *\u0027) converts between pointers to integer types with different sign [-Werror,-Wpointer-sign]\n\n(and both libip4tc.c and libip6tc.c #include libiptc.c)",
+      "parentUuid": "002f9d19_93c875f9",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 33
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bdb43a89_0892d13f",
         "filename": "libxtables/Android.bp",
         "patchSetId": 1
@@ -224,6 +386,30 @@
       "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aff3bd41_07bda24e",
+        "filename": "libxtables/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-11-29T01:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdb43a89_0892d13f",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 6
+      },
+      "revId": "d18c68a8b8092ed270ce8ffb7e691c4821464b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
