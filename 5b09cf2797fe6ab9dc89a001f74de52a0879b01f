@@ -1,0 +1,8 @@
+Code-Review+2: Lorenzo Colitti <lorenzo@google.com>
+Code-Review+2: Bernie Innocenti <codewiz@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Junyu Lai <junyulai@google.com>
+Submitted-at: Tue, 12 Feb 2019 08:33:07 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/external/iptables/+/901475
+Project: platform/external/iptables
+Branch: refs/heads/master
