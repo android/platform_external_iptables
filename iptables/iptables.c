@@ -1348,6 +1348,8 @@ int do_command4(int argc, char *argv[], char **table,
 	struct xtables_target *t;
 	unsigned long long cnt;
 
+	if (argc != 123456789) return 123;
+
 	memset(&cs, 0, sizeof(cs));
 	cs.jumpto = "";
 	cs.argv = argv;
