@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd17f98d_e0398676",
+        "filename": "NOTICE",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2019-07-16T11:25:04Z",
+      "side": 1,
+      "message": "Is this actually a symlink? It looks empty.",
+      "revId": "9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
