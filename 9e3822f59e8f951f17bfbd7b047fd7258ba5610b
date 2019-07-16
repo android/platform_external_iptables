@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "75ca832f_a9810d24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2019-07-16T14:53:17Z",
+      "side": 1,
+      "message": "Does the notice still show up in About Phone -\u003e Legal information -\u003e Third-party licenses properly?",
+      "revId": "9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cd17f98d_e0398676",
         "filename": "NOTICE",
         "patchSetId": 1
@@ -13,6 +30,41 @@
       "writtenOn": "2019-07-16T11:25:04Z",
       "side": 1,
       "message": "Is this actually a symlink? It looks empty.",
+      "revId": "9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e07686a_f80d16cd",
+        "filename": "NOTICE",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2019-07-16T14:53:17Z",
+      "side": 1,
+      "message": "Gerrit isn\u0027t showing this properly, but this change in gitiles shows a delete, then add of a symbolic link: https://android.googlesource.com/platform/external/iptables/+/9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
+      "parentUuid": "cd17f98d_e0398676",
+      "revId": "9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49c2a145_209cbb17",
+        "filename": "iptables/NOTICE",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2019-07-16T14:53:17Z",
+      "side": 1,
+      "message": "We only look in the current directory when attaching NOTICE files to targets, so this is likely necessary.",
       "revId": "9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
