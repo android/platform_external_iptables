@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a1cb47d_e7d89182",
+        "filename": "NOTICE",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2019-07-17T04:42:23Z",
+      "side": 1,
+      "message": "Yes it is.\nhttps://android.googlesource.com/platform/external/iptables/+/12bc8b64f50591710b4d08e4ce5ab52a6791bef0/NOTICE",
+      "parentUuid": "6e07686a_f80d16cd",
+      "revId": "9e3822f59e8f951f17bfbd7b047fd7258ba5610b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49c2a145_209cbb17",
         "filename": "iptables/NOTICE",
         "patchSetId": 1
