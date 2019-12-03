@@ -343,7 +343,11 @@ void parse_wait_interval(int argc, char *argv[], struct timeval *wait_interval)
 	else if (xs_has_arg(argc, argv))
 		arg = argv[optind++];
 	else
+<<<<<<< HEAD   (c70f7a Merge "replace NOTICE with a symlink to COPYING" am: e4e7412)
 		return;
+=======
+		xtables_error(PARAMETER_PROBLEM, "wait interval value required");
+>>>>>>> BRANCH (c16bde iptables 1.6.2 release)
 
 	ret = sscanf(arg, "%u", &usec);
 	if (ret == 1) {
