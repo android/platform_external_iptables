@@ -1,0 +1,8 @@
+Code-Review+2: Remi NGUYEN VAN <reminv@google.com>
+Autosubmit+1: Maciej Żenczykowski <maze@google.com>
+Presubmit-Ready+1: Maciej Żenczykowski <maze@google.com>
+Submitted-by: Maciej Żenczykowski <maze@google.com>
+Submitted-at: Wed, 29 Jan 2020 10:07:46 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/external/iptables/+/1220462
+Project: platform/external/iptables
+Branch: refs/heads/master
