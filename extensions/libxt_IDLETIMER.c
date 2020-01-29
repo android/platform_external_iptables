@@ -28,6 +28,7 @@ enum {
 	O_TIMEOUT = 0,
 	O_LABEL,
 	O_NETLINK,
+	O_ALARM,
 };
 
 #define s struct idletimer_tg_info
@@ -38,6 +39,7 @@ static const struct xt_option_entry idletimer_tg_opts[] = {
 	 .flags = XTOPT_MAND | XTOPT_PUT, XTOPT_POINTER(s, label)},
 	{.name = "send_nl_msg", .id = O_NETLINK, .type = XTTYPE_UINT8,
 	 .flags = XTOPT_PUT, XTOPT_POINTER(s, send_nl_msg)},
+	{.name = "alarm", .id = O_ALARM, .type = XTTYPE_NONE},
 	XTOPT_TABLEEND,
 };
 #undef s
@@ -48,9 +50,19 @@ static void idletimer_tg_help(void)
 "IDLETIMER target options:\n"
 " --timeout time	Timeout until the notification is sent (in seconds)\n"
 " --label string	Unique rule identifier\n"
+" --alarm	        Use alarm instead of default timer\n"
 " --send_nl_msg		(0/1) Enable netlink messages,"
 			" and show remaining time in sysfs. Defaults to 0.\n"
 "\n");
+}
+
+static void idletimer_tg_parse(struct xt_option_call *cb)
+{
+	struct idletimer_tg_info *info = cb->data;
+
+	xtables_option_parse(cb);
+	if (cb->entry->id == O_ALARM)
+		info->timer_type = XT_IDLETIMER_ALARM;
 }
 
 static void idletimer_tg_print(const void *ip,
@@ -63,6 +75,8 @@ static void idletimer_tg_print(const void *ip,
 	printf(" timeout:%u", info->timeout);
 	printf(" label:%s", info->label);
 	printf(" send_nl_msg:%u", info->send_nl_msg);
+	if (info->timer_type == XT_IDLETIMER_ALARM)
+		printf(" alarm");
 }
 
 static void idletimer_tg_save(const void *ip,
@@ -74,6 +88,8 @@ static void idletimer_tg_save(const void *ip,
 	printf(" --timeout %u", info->timeout);
 	printf(" --label %s", info->label);
 	printf(" --send_nl_msg %u", info->send_nl_msg);
+	if (info->timer_type == XT_IDLETIMER_ALARM)
+		printf(" --alarm");
 }
 
 static struct xtables_target idletimer_tg_reg = {
@@ -84,7 +100,7 @@ static struct xtables_target idletimer_tg_reg = {
 	.size	       = XT_ALIGN(sizeof(struct idletimer_tg_info)),
 	.userspacesize = offsetof(struct idletimer_tg_info, timer),
 	.help	       = idletimer_tg_help,
-	.x6_parse      = xtables_option_parse,
+	.x6_parse      = idletimer_tg_parse,
 	.print	       = idletimer_tg_print,
 	.save	       = idletimer_tg_save,
 	.x6_options    = idletimer_tg_opts,
