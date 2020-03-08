@@ -60,12 +60,13 @@ static const struct xt_option_entry bpf_opts_v1[] = {
 	XTOPT_TABLEEND,
 };
 
-static int bpf_obj_get(const char *filepath)
+static int bpf_obj_get_readonly(const char *filepath)
 {
 #if defined HAVE_LINUX_BPF_H && defined __NR_bpf
 	union bpf_attr attr;
 
 	memset(&attr, 0, sizeof(attr));
+	attr.file_flags = BPF_F_RDONLY;
 	attr.pathname = (__u64) filepath;
 
 	return syscall(__NR_bpf, BPF_OBJ_GET, &attr, sizeof(attr));
@@ -124,7 +125,7 @@ static void bpf_parse_string(struct sock_filter *pc, __u16 *lenp, __u16 len_max,
 static void bpf_parse_obj_pinned(struct xt_bpf_info_v1 *bi,
 				 const char *filepath)
 {
-	bi->fd = bpf_obj_get(filepath);
+	bi->fd = bpf_obj_get_readonly(filepath);
 	if (bi->fd < 0)
 		xtables_error(PARAMETER_PROBLEM,
 			      "bpf: failed to get bpf object");
