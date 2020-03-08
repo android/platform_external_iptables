@@ -66,6 +66,7 @@ static int bpf_obj_get(const char *filepath)
 	union bpf_attr attr;
 
 	memset(&attr, 0, sizeof(attr));
+	attr.file_flags = BPF_F_RDONLY;
 	attr.pathname = (__u64) filepath;
 
 	return syscall(__NR_bpf, BPF_OBJ_GET, &attr, sizeof(attr));
