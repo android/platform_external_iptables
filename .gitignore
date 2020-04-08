@@ -9,11 +9,15 @@
 Makefile
 Makefile.in
 
+<<<<<<< HEAD   (b68f7e Merge tag 'v1.8.3' of git://git.netfilter.org/iptables into )
 /extensions/GNUmakefile
 /extensions/initext.c
 /extensions/initext?.c
 /extensions/matches?.man
 /extensions/targets?.man
+=======
+/include/xtables-version.h
+>>>>>>> BRANCH (2b506c configure: bump version for 1.8.4 release)
 
 /aclocal.m4
 /autom4te.cache/
