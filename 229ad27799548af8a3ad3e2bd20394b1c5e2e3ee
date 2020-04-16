@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51236008_5ca72a9c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2020-04-16T02:17:32Z",
+      "side": 1,
+      "message": "I don\u0027t recall specifying this last time I built. Does this remove any features that are in our current version? Or is it disabling something that in our current version was already disabled or not yet implemented?",
+      "range": {
+        "startLine": 26,
+        "startChar": 33,
+        "endLine": 26,
+        "endChar": 52
+      },
+      "revId": "229ad27799548af8a3ad3e2bd20394b1c5e2e3ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
