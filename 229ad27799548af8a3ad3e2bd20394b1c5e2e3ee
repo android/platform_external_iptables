@@ -22,6 +22,30 @@
       "revId": "229ad27799548af8a3ad3e2bd20394b1c5e2e3ee",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61b3ad82_11721dfe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2020-04-16T02:24:21Z",
+      "side": 1,
+      "message": "It was already disabled by virtue of some missing headers or libs.",
+      "parentUuid": "51236008_5ca72a9c",
+      "range": {
+        "startLine": 26,
+        "startChar": 33,
+        "endLine": 26,
+        "endChar": 52
+      },
+      "revId": "229ad27799548af8a3ad3e2bd20394b1c5e2e3ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
