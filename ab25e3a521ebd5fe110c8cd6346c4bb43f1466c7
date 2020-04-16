@@ -1,0 +1,8 @@
+Autosubmit+1: Maciej Żenczykowski <maze@google.com>
+Code-Review+2: Dan Willemsen <dwillemsen@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Thu, 16 Apr 2020 19:59:04 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/external/iptables/+/1288032
+Project: platform/external/iptables
+Branch: refs/heads/master
