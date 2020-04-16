@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "975106da_103f0c64",
+        "filename": "README.version",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2020-04-16T08:24:17Z",
+      "side": 1,
+      "message": "FYI: README.version is obsolete, external/ projects should be using METADATA files as described in http://go/android3p",
+      "revId": "3fbfcba73bc49c4ca34b092714e2e0058e61b908",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
