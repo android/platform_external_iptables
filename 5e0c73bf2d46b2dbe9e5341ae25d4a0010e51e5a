@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b0eb6c2_fa71d4a6",
+        "filename": "METADATA",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2020-04-16T18:38:18Z",
+      "side": 1,
+      "message": "this is supposed to be the local date we last did an update (so yesterday/today?), not the release date",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 51
+      },
+      "revId": "5e0c73bf2d46b2dbe9e5341ae25d4a0010e51e5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bef8070e_2be5acf0",
+        "filename": "METADATA",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2020-04-16T18:38:18Z",
+      "side": 1,
+      "message": "also add this into the third_party section:\n\n  license_type: RESTRICTED",
+      "revId": "5e0c73bf2d46b2dbe9e5341ae25d4a0010e51e5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
