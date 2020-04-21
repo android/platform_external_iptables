@@ -1,0 +1,7 @@
+Code-Review+2: Lorenzo Colitti <lorenzo@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Maciej Żenczykowski <maze@google.com>
+Submitted-at: Tue, 21 Apr 2020 07:52:37 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/external/iptables/+/1291148
+Project: platform/external/iptables
+Branch: refs/heads/master
