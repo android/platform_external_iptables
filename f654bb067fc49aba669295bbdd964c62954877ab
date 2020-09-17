@@ -80,6 +80,30 @@
       "revId": "f654bb067fc49aba669295bbdd964c62954877ab",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e744eab_d299e57b",
+        "filename": "libxtables/xtables.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 1349877
+      },
+      "writtenOn": "2020-09-17T06:15:50Z",
+      "side": 1,
+      "message": "// Code block below causes memory leak.  (Bug:162925719)\n#if 0",
+      "parentUuid": "c8149bec_da3231cd",
+      "range": {
+        "startLine": 760,
+        "startChar": 7,
+        "endLine": 760,
+        "endChar": 40
+      },
+      "revId": "f654bb067fc49aba669295bbdd964c62954877ab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
