@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "16b0dff6_4d3b3945",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2020-09-17T13:14:02Z",
+      "side": 1,
+      "message": "(a) this should go upstream and get reviewed there\nI don\u0027t know how to review it well.\n\n(b) you add 2 frees, but there are 4 calls to xtables_rule_matches_free()\niptables/ip6tables.c:1778:      xtables_rule_matches_free(\u0026cs.matches);\niptables/iptables.c:1769:       xtables_rule_matches_free(\u0026cs.matches);\niptables/xtables-translate.c:297:       xtables_rule_matches_free(\u0026cs.matches);\niptables/xtables.c:1155:        xtables_rule_matches_free(\u0026cs.matches);\n\n(and even more calls in nftables specific code)\niptables/nft-bridge.c:31:       xtables_rule_matches_free(\u0026cs-\u003ematches);\niptables/nft-ipv4.c:291:        xtables_rule_matches_free(\u0026cs.matches);\niptables/nft-ipv6.c:220:        xtables_rule_matches_free(\u0026cs.matches);\niptables/nft-shared.c:698:      xtables_rule_matches_free(\u0026cs-\u003ematches);\n",
+      "revId": "a4c090ea3e728b6daf28caeecc28dc5b85b602cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
