@@ -1768,6 +1768,11 @@ int do_command4(int argc, char *argv[], char **table,
 
 	xtables_rule_matches_free(&cs.matches);
 
+	if (cs.target && cs.target == cs.target->next) {
+		free(cs.target);
+		cs.target = NULL;
+	}
+
 	if (e != NULL) {
 		free(e);
 		e = NULL;
