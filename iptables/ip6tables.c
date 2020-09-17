@@ -1778,6 +1778,7 @@ int do_command6(int argc, char *argv[], char **table,
 	xtables_rule_matches_free(&cs.matches);
 
 	if (cs.target && cs.target == cs.target->next) {
+		fprintf(stderr, "Freeing clone %p\n", cs.target);
 		free(cs.target);
 		cs.target = NULL;
 	}

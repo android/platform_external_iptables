@@ -735,6 +735,7 @@ xtables_find_target(const char *name, enum xtables_tryload tryload)
 	struct xtables_target **dptr;
 	struct xtables_target *ptr;
 
+fprintf(stderr, "xtables_find_target: %s\n", name);
 	/* Standard target? */
 	if (strcmp(name, "") == 0
 	    || strcmp(name, XTC_LABEL_ACCEPT) == 0
@@ -757,11 +758,14 @@ xtables_find_target(const char *name, enum xtables_tryload tryload)
 
 	for (ptr = xtables_targets; ptr; ptr = ptr->next) {
 		if (extension_cmp(name, ptr->name, ptr->family)) {
-			struct xtables_target *clone;
+			struct xtables_target *clone, *orig;
 
 			/* First target of this type: */
 			if (ptr->t == NULL)
+{
+fprintf(stderr, "First target\n");
 				break;
+}
 
 			/* Second and subsequent clones */
 			clone = xtables_malloc(sizeof(struct xtables_target));
@@ -771,7 +775,10 @@ xtables_find_target(const char *name, enum xtables_tryload tryload)
 			/* This is a clone: */
 			clone->next = clone;
 
+orig = ptr;
 			ptr = clone;
+fprintf(stderr, "Creating clone orig=%p, ptr=%p, clone=%p, clone->next=%p\n",
+orig, ptr, clone, clone->next);
 			break;
 		}
 	}
@@ -1235,6 +1242,7 @@ void xtables_register_targets(struct xtables_target *target, unsigned int n)
 /* receives a list of xtables_rule_match, release them */
 void xtables_rule_matches_free(struct xtables_rule_match **matches)
 {
+fprintf(stderr, "xtables_rule_matches_free\n");
 	struct xtables_rule_match *matchp, *tmp;
 
 	for (matchp = *matches; matchp;) {
