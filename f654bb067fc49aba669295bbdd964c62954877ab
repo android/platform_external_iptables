@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa877c92_39b599ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2020-09-17T00:53:11Z",
+      "side": 1,
+      "message": "Note:\n\nIt doesn\u0027t seem to reproduce in the empty filter table...\n\nSo it\u0027s probably something specific to the complexities of the more complex targets present by default in mangle.\n\nvsoc_x86_64:/ # iptables-save -t filter                                                                                          \n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [10:670]\nCOMMIT\n\nvsoc_x86_64:/ # iptables-save -t mangle                                                                                          \n*mangle\n:PREROUTING ACCEPT [0:0]\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\n:POSTROUTING ACCEPT [0:0]\n:bw_mangle_POSTROUTING - [0:0]\n:idletimer_mangle_POSTROUTING - [0:0]\n:oem_mangle_post - [0:0]\n:routectrl_mangle_INPUT - [0:0]\n:tetherctrl_mangle_FORWARD - [0:0]\n:wakeupctrl_mangle_INPUT - [0:0]\n-A INPUT -j wakeupctrl_mangle_INPUT\n-A INPUT -j routectrl_mangle_INPUT\n-A FORWARD -j tetherctrl_mangle_FORWARD\n-A POSTROUTING -j oem_mangle_post\n-A POSTROUTING -j bw_mangle_POSTROUTING\n-A POSTROUTING -j idletimer_mangle_POSTROUTING\n-A bw_mangle_POSTROUTING -o ipsec+ -j RETURN\n-A bw_mangle_POSTROUTING -m policy --dir out --pol ipsec -j RETURN\n-A bw_mangle_POSTROUTING -j MARK --set-xmark 0x0/0x100000\n-A bw_mangle_POSTROUTING -m owner --uid-owner 1029 -j RETURN\n-A bw_mangle_POSTROUTING -m bpf --object-pinned /sys/fs/bpf/prog_netd_skfilter_egress_xtbpf\n-A idletimer_mangle_POSTROUTING -o rmnet0 -j IDLETIMER --timeout 10 --label 0 --send_nl_msg 1\n-A routectrl_mangle_INPUT -i rmnet0 -j MARK --set-xmark 0x30064/0xffefffff\n-A tetherctrl_mangle_FORWARD -p tcp -m tcp --tcp-flags SYN SYN -j TCPMSS --clamp-mss-to-pmtu\nCOMMIT",
+      "revId": "f654bb067fc49aba669295bbdd964c62954877ab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
