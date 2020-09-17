@@ -757,6 +757,7 @@ xtables_find_target(const char *name, enum xtables_tryload tryload)
 
 	for (ptr = xtables_targets; ptr; ptr = ptr->next) {
 		if (extension_cmp(name, ptr->name, ptr->family)) {
+#ifdef I_WANT_MY_IPTABLES_TO_LEAK_MEMORY_BUG_162925719
 			struct xtables_target *clone;
 
 			/* First target of this type: */
@@ -772,6 +773,7 @@ xtables_find_target(const char *name, enum xtables_tryload tryload)
 			clone->next = clone;
 
 			ptr = clone;
+#endif
 			break;
 		}
 	}
