@@ -16,6 +16,23 @@
       "revId": "f654bb067fc49aba669295bbdd964c62954877ab",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ed6b144_50bce7b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2020-09-17T02:50:01Z",
+      "side": 1,
+      "message": "Failure is on wembley-userdebug:\n  https://android-build.googleplex.com/builds/tests/view?invocationId\u003dI74700005944349850\u0026testResultId\u003dTR93713103354510971\n\ncom.android.tradefed.error.HarnessRuntimeException: Exception during device flashing\n\tat com.google.android.asit.DeviceBootTest.bringUp(DeviceBootTest.java:146)\n\tat com.google.android.asit.BaseBootTest.testFirstBoot(BaseBootTest.java:667)\n\tat com.google.android.asit.BaseBootTest.run(BaseBootTest.java:455)\n\tat com.android.tradefed.invoker.InvocationExecution.runTest(InvocationExecution.java:742)\n\tat com.android.tradefed.invoker.InvocationExecution.runTests(InvocationExecution.java:606)\n\tat com.android.tradefed.invoker.TestInvocation.prepareAndRun(TestInvocation.java:437)\n\tat com.android.tradefed.invoker.TestInvocation.performInvocation(TestInvocation.java:238)\n\tat com.android.tradefed.invoker.TestInvocation.invoke(TestInvocation.java:933)\n\tat com.android.tradefed.command.CommandScheduler$InvocationThread.run(CommandScheduler.java:610)",
+      "revId": "f654bb067fc49aba669295bbdd964c62954877ab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
