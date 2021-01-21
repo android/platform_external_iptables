@@ -1,6 +1,10 @@
 //----------------------------------------------------------------
 // libxtables
 
+package {
+    default_applicable_licenses: ["external_iptables_license"],
+}
+
 cc_library_static {
     name: "libxtables",
     defaults: ["iptables_defaults"],

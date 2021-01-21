@@ -1,3 +1,14 @@
+package {
+    default_applicable_licenses: ["external_iptables_license"],
+}
+
+license {
+    name: "external_iptables_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-Artistic","SPDX-license-identifier-Artistic-2.0","SPDX-license-identifier-GPL","SPDX-license-identifier-GPL-2.0","SPDX-license-identifier-LGPL","SPDX-license-identifier-MIT"],
+    license_text: ["COPYING"],
+}
+
 cc_library_headers {
     name: "iptables_headers",
     export_include_dirs: ["include"],
