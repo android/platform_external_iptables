@@ -1,3 +1,15 @@
+package {
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // the below license kinds from "external_iptables_license":
+    //   SPDX-license-identifier-Artistic
+    //   SPDX-license-identifier-Artistic-2.0
+    //   SPDX-license-identifier-GPL
+    //   SPDX-license-identifier-GPL-2.0
+    //   SPDX-license-identifier-LGPL
+    default_applicable_licenses: ["external_iptables_license"],
+}
+
 cc_defaults {
     name: "iptables_cmd_defaults",
     defaults: ["iptables_defaults"],
